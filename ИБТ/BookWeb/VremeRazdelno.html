@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <div class="pageTitle">
+            <title>Книги за купуване</title>
+        </div>        
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <h1>Добре дошли в КупиСиКнига</h1>
+            <h4>Най-доброто място за любители на книги!</h4>
+        </header>
+        <div class="navbar">
+            <a href="LoginRegister.html" target="_blank">Вход/Регистрация</a>
+        </div>
+        <div class="book-container">
+            <img src="Images\VremeRazdelno.jpg" alt="Време Разделно">
+            <div class="book-details">
+                <h3>Време Разделно</h3>
+                <p>
+                    Vreme Razdelno by Anton Donchev is a historical novel set in 17th century Bulgaria during the Ottoman rule. 
+                    The story centers on the forced Islamization of the Bulgarian Christian population, 
+                    depicting the cultural and religious struggles, resistance, and suffering of the people. 
+                    Through vivid storytelling and rich historical context, Donchev explores themes of identity, faith, and survival.
+                </p>
+                <div class="bottom-section">
+                    <h4 class="price">Цена: 18.00лв</h4>
+                    <div class="buttons">
+                        <button class="button" onclick="showForm('purchaseForm')">Купи</button>
+                        <div id="purchaseForm" class="hidden form-container">
+                            <button class="close-btn" onclick="closeForm('purchaseForm');">x</button>
+                            <h3>Закупуване</h3>
+                            <div class="modal">
+                                <form class="form" method="post">
+                                    <input type="hidden" name="form_type" value="purchase_form">
+                                    <div class="separator">
+                                        <hr class="line">
+                                        <p>ИЛИ</p>
+                                        <hr class="line">
+                                    </div>
+                                    <div class="card-info">
+                                        <div class="input_container">
+                                            <label class="input_label">Име на притежателя на картата</label>
+                                            <input class="input_field" type="text" id="name" placeholder="Въведете цялото име">
+                                        </div>
+                                        <div class="input_container">
+                                            <label class="input_label">Номер на картата</label>
+                                            <input class="input_field" type="number" id="cardNumber" placeholder="0000 0000 0000 0000">
+                                        </div>
+                                        <div class="input_container">
+                                            <label class="input_label">Дата на валидност / CVV</label>
+                                            <div class="split">
+                                                <input class="input_field" style="width: 250px;" type="text" id="expiryDate" placeholder="01/23">
+                                                <input class="input_field" style="width: 110px;" type="number" id="cvvNum" placeholder="CVV">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" name="insert" class="checkout" style="cursor: pointer;" onclick="showPopup(), resetPurchaseForm();">
+                                        <span>Плащане</span>
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="popup" id="popup">
+                                <h3 id="popupMessage">%Име%, благодарим за поръчката!</h3>
+                                <button type="button" onclick="closePopup(), closeForm('purchaseForm');">OK</button>
+                            </div>
+                        </div>
+                        <button class="button" onclick="showForm('reviewForm');">Ревюта</button>
+                        <div id="reviewForm" class="hidden form-container">
+                            <button class="close-btn" onclick="closeForm('reviewForm');">x</button>
+                            <div class="wrapper">
+                                <h3>Оценете продукта</h3>
+                                <form id="reviewFormElement" method="post">
+                                    <input type="hidden" name="form_type" value="review_form">
+                                    <div class="input_container">
+                                        <input class="input_field" type="text" id="reviewerName" placeholder="Въведете цялото име">
+                                    </div>
+                                    <textarea name="opinion" cols="30" rows="5" id="reviewArea" placeholder="Вашето мнение..."></textarea>
+                                    <div class="btn-group">
+                                        <button type="submit" name="isnert" class="btn submit" onclick="closeForm('reviewForm'), resetReviewForm(), submitReview();">Публикувай</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="reviews">
+            <h3>Ревюта</h3>
+            <div class="review">
+                <p><strong>Любен Георгиев:</strong> Хубава книга.</p>
+            </div>
+            <div class="review">
+                <p><strong>Стилият Петров:</strong> Много ми харесва.</p>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

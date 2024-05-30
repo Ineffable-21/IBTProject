@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <div class="pageTitle">
+            <title>Книги за купуване</title>
+        </div>        
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <h1>Добре дошли в КупиСиКнига</h1>
+            <h4>Най-доброто място за любители на книги!</h4>
+        </header>
+        <div class="navbar">
+            <a href="LoginRegister.html" target="_blank">Вход/Регистрация</a>
+        </div>
+        <div class="book-container">
+            <img src="Images\TheOmen.jpg" alt="The Omen">
+            <div class="book-details">
+                <h3>The Omen</h3>
+                <p>
+                    The Omen by David Seltzer is a horror novel about an American diplomat, Robert Thorn, who unknowingly adopts the Antichrist, 
+                    Damien, after his own child is stillborn. As Damien grows, a series of mysterious and violent deaths occur around him, 
+                    leading Robert to a horrifying revelation about his son's true identity. The novel delves into themes of prophecy, 
+                    fate, and the battle between good and evil.
+                </p>
+                <div class="bottom-section">
+                    <h4 class="price">Цена: 12.50лв</h4>
+                    <div class="buttons">
+                        <button class="button" onclick="showForm('purchaseForm')">Купи</button>
+                        <div id="purchaseForm" class="hidden form-container">
+                            <button class="close-btn" onclick="closeForm('purchaseForm');">x</button>
+                            <h3>Закупуване</h3>
+                            <div class="modal">
+                                <form class="form" method="post">
+                                    <input type="hidden" name="form_type" value="purchase_form">
+                                    <div class="separator">
+                                        <hr class="line">
+                                        <p>ИЛИ</p>
+                                        <hr class="line">
+                                    </div>
+                                    <div class="card-info">
+                                        <div class="input_container">
+                                            <label class="input_label">Име на притежателя на картата</label>
+                                            <input class="input_field" type="text" id="name" placeholder="Въведете цялото име">
+                                        </div>
+                                        <div class="input_container">
+                                            <label class="input_label">Номер на картата</label>
+                                            <input class="input_field" type="number" id="cardNumber" placeholder="0000 0000 0000 0000">
+                                        </div>
+                                        <div class="input_container">
+                                            <label class="input_label">Дата на валидност / CVV</label>
+                                            <div class="split">
+                                                <input class="input_field" style="width: 250px;" type="text" id="expiryDate" placeholder="01/23">
+                                                <input class="input_field" style="width: 110px;" type="number" id="cvvNum" placeholder="CVV">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" name="insert" class="checkout" style="cursor: pointer;" onclick="showPopup(), resetPurchaseForm();">
+                                        <span>Плащане</span>
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="popup" id="popup">
+                                <h3 id="popupMessage">%Име%, благодарим за поръчката!</h3>
+                                <button type="button" onclick="closePopup(), closeForm('purchaseForm');">OK</button>
+                            </div>
+                        </div>
+                        <button class="button" onclick="showForm('reviewForm');">Ревюта</button>
+                        <div id="reviewForm" class="hidden form-container">
+                            <button class="close-btn" onclick="closeForm('reviewForm');">x</button>
+                            <div class="wrapper">
+                                <h3>Оценете продукта</h3>
+                                <form id="reviewFormElement" method="post">
+                                    <input type="hidden" name="form_type" value="review_form">
+                                    <div class="input_container">
+                                        <input class="input_field" type="text" id="reviewerName" placeholder="Въведете цялото име">
+                                    </div>
+                                    <textarea name="opinion" cols="30" rows="5" id="reviewArea" placeholder="Вашето мнение..."></textarea>
+                                    <div class="btn-group">
+                                        <button type="submit" name="isnert" class="btn submit" onclick="closeForm('reviewForm'), resetReviewForm(), submitReview();">Публикувай</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="reviews">
+            <h3>Ревюта</h3>
+            <div class="review">
+                <p><strong>Ивана Петрова:</strong> Много интересна.</p>
+            </div>
+            <div class="review">
+                <p><strong>Алексия Алексиева:</strong> Силно ми въздейства!</p>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

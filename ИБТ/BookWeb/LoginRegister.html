@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <div class="pageTitle">
+            <title>Логин/Регистрация</title>
+        </div>        
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="hero">
+            <div class="form-box">
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <button type="button" class="toggle-btn" onclick="login()">Вход</button>
+                    <button type="button" class="toggle-btn" onclick="register()">Регистрация</button>
+                </div>
+                <form id="login" class="login-input-group">
+                    <input type="text" class="login-input-field" placeholder="Потребителско име" required>
+                    <input type="text" class="login-input-field" placeholder="Парола" required>
+                    <button type="submit" class="submit-btn">Вход</button>
+                </form>
+                <form id="register" class="login-input-group">
+                    <input type="text" class="login-input-field" placeholder="Потребителско име" required>
+                    <input type="text" class="login-input-field" placeholder="Парола" required>
+                    <button type="submit" class="submit-btn">Регистрация</button>
+                </form>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
